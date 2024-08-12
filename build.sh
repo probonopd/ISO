@@ -59,7 +59,6 @@ tar -xf ${WORKDIR}/system.txz -C ${WORKDIR}/live-default/config/includes.chroot_
 tar -xf ${WORKDIR}/applications.txz -C ${WORKDIR}/live-default/config/includes.chroot_after_packages/
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/Applications
-ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/Developer/Applications
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/System/Applications
 
 cat <<EOF > config/hooks/live/gershwin.hook.chroot

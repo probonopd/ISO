@@ -21,12 +21,19 @@ if [ -d "/home/runner/work/iso/iso/" ]; then
 fi
 
 if [ -z "$WORKDIR" ]; then
-  echo "WORKDIR is empty, setting it to current working directory"
+  echo "WORKDIR is empty, setting it to current working directory and setup for local building"
   WORKDIR="$PWD"
+  cd ${WORKDIR} && git clone https://github.com/gershwin-os/system.git --recurse-submodules
+  cd ${WORKDIR}/system && ./tools-scripts/install-dependencies-linux && make install
+  mv ${WORKDIR}/system/system.txz ${WORKDIR}
+  cd ${WORKDIR} && git clone https://github.com/gershwin-os/applications.git --recurse-submodules
+  cd ${WORKDIR}/applications && make install
+  mv ${WORKDIR}/applications.txz ${WORKDIR}
 fi
 
 echo "WORKDIR is set to: $WORKDIR"
 
+cd ${WORKDIR}
 rm -rf live-default
 mkdir live-default
 cd live-default || exit

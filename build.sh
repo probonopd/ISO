@@ -66,6 +66,7 @@ echo "git" > config/package-lists/gershwin.list.chroot
 cp ${WORKDIR}/config/package-lists/gershwin.list.chroot config/package-lists/gershwin.list.chroot
 tar -xf ${WORKDIR}/system.txz -C ${WORKDIR}/live-default/config/includes.chroot_after_packages/
 tar -xf ${WORKDIR}/applications.txz -C ${WORKDIR}/live-default/config/includes.chroot_after_packages/
+cp -R ${WORKDIR}/overlay/* ${WORKDIR}/live-default/config/includes.chroot_after_packages/
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/Applications
 ls ${WORKDIR}/live-default/config/includes.chroot_after_packages/System/Applications

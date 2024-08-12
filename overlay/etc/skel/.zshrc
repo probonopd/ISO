@@ -13,6 +13,9 @@ export EDITOR=nano
 # Source GNUstep.sh
 source /System/Makefiles/GNUstep.sh
 
+# Create profile folders
+xdg-user-dirs-update
+
 # Check if GWorkspace is running
 if ! pgrep -x "GWorkspace" > /dev/null; then
     # Launch startx with Gershwin-X11 script

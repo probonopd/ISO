@@ -23,9 +23,11 @@ fi
 if [ -z "$WORKDIR" ]; then
   echo "WORKDIR is empty, setting it to current working directory and setup for local building"
   WORKDIR="$PWD"
+  [ -d "${WORKDIR}/system" ] && rm -rf "${WORKDIR}/system"
   cd ${WORKDIR} && git clone https://github.com/gershwin-os/system.git --recurse-submodules
   cd ${WORKDIR}/system && ./tools-scripts/install-dependencies-linux && make clean && make uninstall && make install
   mv ${WORKDIR}/system/system.txz ${WORKDIR}
+  [ -d "${WORKDIR}/applications" ] && rm -rf "${WORKDIR}/applications"
   cd ${WORKDIR} && git clone https://github.com/gershwin-os/applications.git --recurse-submodules
   cd ${WORKDIR}/applications && make clean && make uninstall && make install
   mv ${WORKDIR}/applications.txz ${WORKDIR}

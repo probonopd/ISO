@@ -30,7 +30,7 @@ if [ -z "$WORKDIR" ]; then
   [ -d "${WORKDIR}/applications" ] && rm -rf "${WORKDIR}/applications"
   cd ${WORKDIR} && git clone https://github.com/gershwin-os/applications.git --recurse-submodules
   cd ${WORKDIR}/applications && make uninstall && make install
-  mv ${WORKDIR}/applications.txz ${WORKDIR}
+  mv ${WORKDIR}/applications/applications.txz ${WORKDIR}
 fi
 
 echo "WORKDIR is set to: $WORKDIR"

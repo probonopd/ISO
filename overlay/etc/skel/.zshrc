@@ -12,3 +12,9 @@ export EDITOR=nano
 
 # Source GNUstep.sh
 source /System/Makefiles/GNUstep.sh
+
+# Check if GWorkspace is running
+if ! pgrep -x "GWorkspace" > /dev/null; then
+    # Launch startx with Gershwin-X11 script
+    startx /System/Library/Scripts/Gershwin-X11
+fi

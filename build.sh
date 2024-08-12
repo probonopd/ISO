@@ -61,6 +61,9 @@ lb config $lb_config
 
 echo "xorg" > config/package-lists/gershwin.list.chroot
 echo "git" > config/package-lists/gershwin.list.chroot
+echo "picom" > config/package-lists/gershwin.list.chroot
+echo "sddm" > config/package-lists/gershwin.list.chroot
+echo "zsh" > config/package-lists/gershwin.list.chroot
 
 # Modify package list extract GNUstep
 cp ${WORKDIR}/config/package-lists/gershwin.list.chroot config/package-lists/gershwin.list.chroot

@@ -6,6 +6,7 @@ This repository automates the build of Gershwin Installation media.
 
 * Debain 12
 * live-build
+* qemu-user-static (for ARM64)
 
 ## Building the ISO
 
